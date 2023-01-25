@@ -13,7 +13,7 @@ class ServerRepository(private val serverPreference: ResponseSharedPreference, p
     private var _serverKey: MutableStateFlow<Boolean> = MutableStateFlow(true)
     var serverKey: StateFlow<Boolean> = _serverKey
 
-    suspend fun getApii(): Any = withContext(Dispatchers.IO) {
+    suspend fun getValue(): Any = withContext(Dispatchers.IO) {
 
         var value = serverPreference.getResponse()
         Log.d("NikitaKaretnikov","${value}")

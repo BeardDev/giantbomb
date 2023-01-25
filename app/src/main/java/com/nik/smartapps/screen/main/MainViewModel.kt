@@ -11,9 +11,8 @@ import javax.inject.Inject
 @HiltViewModel
 class MainViewModel @Inject constructor(private val repository: ServerRepository) : ViewModel() {
     val token = repository.serverKey
-    val url = "https://www.google.com"
 
     fun start() {
-        viewModelScope.launch(Dispatchers.Default) { repository.getApii() }
+        viewModelScope.launch(Dispatchers.Default) { repository.getValue() }
     }
 }

@@ -21,7 +21,11 @@
         android:id="@+id/webFragment"
         android:name="com.nik.smartapps.screen.web.WebFragment"
         android:label="fragment_web"
-        tools:layout="@layout/fragment_web" />
+        tools:layout="@layout/fragment_web" >
+        <action
+            android:id="@+id/action_webFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
     <fragment
         android:id="@+id/gameFragment"
         android:name="com.nik.smartapps.GameFragment"
