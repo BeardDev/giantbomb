@@ -15,17 +15,13 @@ class ServerRepository(private val serverPreference: UrlPreferences, private val
     suspend fun getValue(): Any = withContext(Dispatchers.IO) {
 
         var value = serverPreference.getResponse()
-        Log.d("NikitaKaretnikov","${value}")
 
         if (value == null) {
-            Log.e("ServerRepository", "getResponse error")
             val result = api.getApi().id % 2 ==0
-            Log.d("NikitaKaretnikov","ebat")
             serverPreference.setResponse(result)
             _serverKey.value = result
         } else {
             _serverKey.value = value
-            Log.d("NikitaKaretnikov","ebat")
         }
     }
 }

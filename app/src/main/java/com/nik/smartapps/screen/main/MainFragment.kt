@@ -37,7 +37,4 @@ class MainFragment : Fragment() {
         findNavController().navigate(MainFragmentDirections.actionMainFragmentToWebFragment())
     }
 
-    private fun startGame() {
-        // TODO: Open a unique game
-    }
 }
