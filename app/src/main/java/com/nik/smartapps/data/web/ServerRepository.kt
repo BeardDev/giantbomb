@@ -1,14 +1,13 @@
 package com.nik.smartapps.data.web
 
 import android.util.Log
-import com.nik.smartapps.data.ResponseSharedPreference
-import com.nik.smartapps.data.entity.Server
+import com.nik.smartapps.data.UrlPreferences
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.withContext
 
-class ServerRepository(private val serverPreference: ResponseSharedPreference, private val api: ServerApi) {
+class ServerRepository(private val serverPreference: UrlPreferences, private val api: ServerApi) {
 
     private var _serverKey: MutableStateFlow<Boolean> = MutableStateFlow(true)
     var serverKey: StateFlow<Boolean> = _serverKey

@@ -1,6 +1,6 @@
 package com.nik.smartapps.app
 
-import com.nik.smartapps.data.ResponseSharedPreference
+import com.nik.smartapps.data.UrlPreferences
 import com.nik.smartapps.data.web.ServerApi
 import com.nik.smartapps.data.web.ServerRepository
 import dagger.Module
@@ -23,5 +23,5 @@ class ApiModule {
     fun provideApi(retrofit: Retrofit): ServerApi = retrofit.create(ServerApi::class.java)
 
     @Provides
-    fun provideRepo(api: ServerApi, serverPreference : ResponseSharedPreference) = ServerRepository(serverPreference,api)
+    fun provideRepo(api: ServerApi, serverPreference : UrlPreferences) = ServerRepository(serverPreference,api)
 }
